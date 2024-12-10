@@ -1,0 +1,7 @@
+namespace eventSchemaHandler;
+
+
+table SendMessagePayload {
+    msg: string;
+    msg_type: string;
+}

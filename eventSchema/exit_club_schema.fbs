@@ -1,0 +1,5 @@
+namespace eventSchemaHandler;
+
+table ExitClubPayload {
+    user_ids: [int32];
+}

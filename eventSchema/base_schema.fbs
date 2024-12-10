@@ -1,0 +1,20 @@
+include "join_club_schema.fbs";
+include "message_schema.fbs";
+include "exit_club_schema.fbs";
+
+namespace eventSchemaHandler;
+
+
+union Payload {
+  JoinClubPayload,
+  SendMessagePayload,
+  ExitClubPayload
+}
+
+table EventWrapper {
+    club_id: string;
+    event: string;
+    payload: Payload;
+}
+
+root_type EventWrapper;

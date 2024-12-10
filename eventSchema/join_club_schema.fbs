@@ -1,0 +1,5 @@
+namespace eventSchemaHandler;
+
+table JoinClubPayload{
+    club_id: string;
+}
