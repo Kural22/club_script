@@ -20,12 +20,12 @@ type WebSocketConfig struct {
 
 func main() {
 	config := WebSocketConfig{
-		URL:    "wss://stage-api.getstan.app/ws/club",
-		Token:  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiZ21pUHJvZmlsZUlkIjozNTcwMCwiZXhwIjoxNzMzOTA2Mzg4LCJmcmVlZmlyZVByb2ZpbGVJZCI6MzU3MDEsImlhdCI6MTczMzgxOTk4OCwiaWQiOiIyMDU5MCJ9.CWrnGf9g8gwG-wx49gL4i600U36BtWt4BVsamFCUYpY",
-		ClubId: "7XWWZ4SS",
-		UserId: "20590",
+		URL:    "wss://api.getstan.app/ws/club",
+		Token:  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiZ21pUHJvZmlsZUlkIjozOTA3NjExOCwiZXhwIjoxNzM4OTk1NTE3LCJmcmVlZmlyZVByb2ZpbGVJZCI6MzkwNzYxMTksImlhdCI6MTczNjQwMzUxNywiaWQiOjIxNDY5MzkzfQ.prnJNkXdEAqstNxjrI8OykuFQJRoBQ618CRMHbwZvDc",
+		ClubId: "W94HPVYP",
+		UserId: "21469393",
 		Headers: map[string]string{
-			"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiZ21pUHJvZmlsZUlkIjozNTcwMCwiZXhwIjoxNzMzOTA2Mzg4LCJmcmVlZmlyZVByb2ZpbGVJZCI6MzU3MDEsImlhdCI6MTczMzgxOTk4OCwiaWQiOiIyMDU5MCJ9.CWrnGf9g8gwG-wx49gL4i600U36BtWt4BVsamFCUYpY",
+			"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJiZ21pUHJvZmlsZUlkIjozOTA3NjExOCwiZXhwIjoxNzM4OTk1NTE3LCJmcmVlZmlyZVByb2ZpbGVJZCI6MzkwNzYxMTksImlhdCI6MTczNjQwMzUxNywiaWQiOjIxNDY5MzkzfQ.prnJNkXdEAqstNxjrI8OykuFQJRoBQ618CRMHbwZvDc",
 		},
 	}
 
@@ -68,7 +68,7 @@ func connectWebSocket(config WebSocketConfig) error {
 	time.Sleep(5 * time.Second)
 
 	// send a message to the club
-	messageEventData := flatbuffer.SendMessageEvent(config.ClubId, "Check for script!", "message")
+	messageEventData := flatbuffer.SendMessageEvent(config.ClubId, "Kural is liveeeeee!", "message")
 	err = conn.Write(ctx, websocket.MessageBinary, messageEventData)
 	if err != nil {
 		log.Fatalf("Error sending message event: %v", err)
